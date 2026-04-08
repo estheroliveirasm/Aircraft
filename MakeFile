@@ -1,0 +1,24 @@
+CC = gcc
+SRC = ./src
+OBJS = ./objs
+TARGET = aircraft
+CLEAN = rm
+
+all: objects 
+	$(CC) $(OBJS)/menus.o $(OBJS)/registrations.o $(OBJS)/reports.o $(OBJS)/searches.o $(OBJS)/utils.o $(OBJS)/files.o $(OBJS)/main.o -o $(TARGET)
+
+objects:
+	$(CC) -c $(SRC)/menus.c -o $(OBJS)/menus.o
+	$(CC) -c $(SRC)/registrations.c -o $(OBJS)/registrations.o
+	$(CC) -c $(SRC)/reports.c -o $(OBJS)/reports.o
+	$(CC) -c $(SRC)/searches.c -o $(OBJS)/searches.o
+	$(CC) -c $(SRC)/utils.c -o $(OBJS)/utils.o
+	$(CC) -c $(SRC)/files.c -o $(OBJS)/files.o
+	$(CC) -c main.c -o $(OBJS)/main.o
+
+clear:
+	$(CLEAN) $(OBJS)/*.o
+	$(CLEAN) $(TARGET)
+
+aircraft: $(OBJS)
+	$(CC) $(OBJS) -o aircraft

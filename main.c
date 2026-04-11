@@ -1,10 +1,12 @@
-#include "./include/types.h"
-#include "./include/menus.h"
-#include "./include/cadastros.h"
-#include "./include/relatorios.h"
-#include "./include/consultas.h"
-#include "./include/arquivos.h"
-#include "./include/utils.h"
+#include "include/types.h"
+#include "include/menus.h"
+#include "include/registrations.h"
+#include "include/reports.h"
+#include "include/searches.h"
+#include "include/files.h"
+#include "include/utils.h"
+#include <stdio.h>
+#include <string.h>
 #include <stdio.h>
 #include <string.h>
 

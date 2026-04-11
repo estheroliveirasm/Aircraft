@@ -2,10 +2,12 @@ CC = gcc
 SRC = ./src
 OBJS = ./objs
 TARGET = aircraft
-CLEAN = rm
+CLEAR = rm -f
 
-all: objects 
-	$(CC) $(OBJS)/menus.o $(OBJS)/registrations.o $(OBJS)/reports.o $(OBJS)/searches.o $(OBJS)/utils.o $(OBJS)/files.o $(OBJS)/main.o -o $(TARGET)
+all:
+	mkdir -p $(OBJS)
+	$(MAKE) objects
+	$(CC) $(OBJS)/*.o -o $(TARGET)
 
 objects:
 	$(CC) -c $(SRC)/menus.c -o $(OBJS)/menus.o
@@ -19,6 +21,3 @@ objects:
 clear:
 	$(CLEAN) $(OBJS)/*.o
 	$(CLEAN) $(TARGET)
-
-aircraft: $(OBJS)
-	$(CC) $(OBJS) -o aircraft

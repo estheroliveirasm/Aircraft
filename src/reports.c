@@ -1,5 +1,6 @@
 #include "../include/reports.h"
 #include "../include/utils.h"
+#include "../include/types.h"
 #include <stdio.h>
 
 void show_aircraft_data(aircraft_data_t *aircraft, FILE *fp) {
